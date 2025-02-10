@@ -1,4 +1,4 @@
-theme = "hugo-bearcub"
+theme = "color-your-world"
 
 defaultContentLanguage = "en"
 
@@ -22,7 +22,7 @@ noClasses = false
 [languages]
 [languages.en]
 title = "Rex Kernel eXtension"
-languageName = "en-US 🇺🇸"
+languageName = "en-US"
 LanguageCode = "en-US"
 contentDir = "content"
 [languages.en.params]
@@ -75,6 +75,6 @@ themeStyle = "original"
 # Author metadata. This is mostly used for the RSS feed of your site, but the
 # email is also added to the footer of each post. You can hide the "reply to"
 # link by using a `hideReply` param in front matter.
-[params.author]
-name = "Ruowen Qin"
-email = "chinqrw@gmail.com"
+# [params.author]
+# name = "Ruowen Qin"
+# email = "chinqrw@gmail.com"
