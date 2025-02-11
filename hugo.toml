@@ -39,7 +39,7 @@ favicon = "images/favicon.png"
 # to your site. Ignored if `generateSocialCard = true`. For more information
 # about previews, see https://gohugo.io/templates/internal#twitter-cards and
 # https://gohugo.io/templates/internal#open-graph
-images = ["images/share.webp"]
+images = ["./images/ebpf_logo.png"]
 
 # This title is used as the site_name on the Hugo's internal opengraph
 # structured data template
@@ -66,10 +66,30 @@ themeStyle = "original"
 # information see layouts/partials/social_card.html
 # generateSocialCard = true
 
-[params.notFound]
-title = "Page not found"
-description = "This page was not found."
-paragraph = "Welcome to the world of Ave Mujica."
+paperTitle = "Rex: Closing the language-verifier gap with safe and usable kernel extensions"
+paperAbstract = """
+	Safe kernel extensions have gained significant traction, evolving from
+simple packet filters to large, complex programs that customize storage,
+networking, and scheduling. Existing kernel extension mechanisms like eBPF rely
+on in-kernel verifiers to ensure safety of kernel extensions by static
+verification using symbolic execution. We identify significant usability
+issues—safe extensions being rejected by the verifier—due to the
+language-verifier gap, a mismatch between developers’ expectation of program
+safety provided by a contract with the programming language, and the verifier’s
+expectation. We present Rex, a new kernel extension framework that closes the
+language-verifier gap and improves the usability of kernel extensions in terms
+of programming experience and maintainability. Rex builds upon language-based
+safety to provide safety properties desired by kernel extensions, along with a
+lightweight extralingual runtime for properties that are unsuitable for static
+analysis, including safe exception handling, stack safety, and termination.
+With Rex, kernel extensions are written in safe Rust and interact with the
+kernel via a safe interface provided by Rex’s kernel crate. No separate static
+verification is needed. Rex addresses usability issues of eBPF kernel
+extensions without compromising performance.
+  """
+paperAuthors = ["Jinghao Jia", "Ruowen Qin"]
+paperPublicationDate = "2025-02-01"
+paperLink = "https://example.com/ebpf-paper.pdf"
 
 
 # Social media. Delete any item you aren't using to make sure it won't show up
@@ -81,6 +101,30 @@ paragraph = "Welcome to the world of Ave Mujica."
 # Author metadata. This is mostly used for the RSS feed of your site, but the
 # email is also added to the footer of each post. You can hide the "reply to"
 # link by using a `hideReply` param in front matter.
-# [params.author]
-# name = "Ruowen Qin"
-# email = "chinqrw@gmail.com"
+[params.author]
+name = "Ruowen Qin"
+email = "chinqrw@gmail.com"
+
+
+[params.notFound]
+title = "Page not found"
+description = "This page was not found."
+paragraph = "Welcome to the world of Ave Mujica."
+
+
+[params.style]
+isDark = true
+darkAccent = "#1dbc91"
+lightAccent = "#1f676b"
+presets = [
+	"#1f676b",
+	"#f3a530",
+	"#902b37",
+	"#1dbc91",
+	"#754e85",
+	"#7fc121",
+	"#a8314a",
+	"#ff7433",
+	"#3e6728",
+	"#c063bd",
+]
